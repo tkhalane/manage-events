@@ -17,7 +17,7 @@ export class EventAppComponent {
   }
 
   addEvent() {
-    this.eventService.addEvent(this.newEvent);
+    this.eventService.addEvent();
     this.newEvent = new Event();
   }
 }

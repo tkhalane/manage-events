@@ -12,8 +12,8 @@ export class EventService {
   }
 
   // Simulate POST /Events
-  addEvent(Event: Event): EventService {
-    this.Events.push(Event);
+  addEvent(): EventService {
+    //this.Events.push();
     return this;
   }
 
