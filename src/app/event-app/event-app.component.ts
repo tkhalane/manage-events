@@ -20,16 +20,4 @@ export class EventAppComponent {
     this.eventService.addEvent(this.newEvent);
     this.newEvent = new Event();
   }
-
-  toggleEventComplete(event) {
-    this.eventService.toggleEventComplete(event);
-  }
-
-  removeEvent(event) {
-    this.eventService.deleteEventById(event.id);
-  }
-
-  get events() {
-    return this.eventService.getAllEvents();
-  }
 }
