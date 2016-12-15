@@ -1,0 +1,31 @@
+<section class="eventapp">
+  <header class="header">
+    <h1>Events</h1>
+    <input class="new-event" placeholder="sponsor?" autofocus="" [(ngModel)]="newEvent.sponsor" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.address" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.attending" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.date" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.mainTweleb" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.name" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.description" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.type" (keyup.enter)="addEvent()">
+    <input class="new-event" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newEvent.venue" (keyup.enter)="addEvent()">
+  </header>
+  <section class="main" *ngIf="events.length > 0">
+    <ul class="event-list">
+      <li *ngFor="let event of events">
+        <div class="view">
+          <input class="toggle" type="checkbox" (click)="toggleEventComplete(event)" [checked]="event.complete">
+          <label>{{event.name}}</label>
+          <label>{{event.address}}</label>
+          <label>{{event.venue}}</label>
+          <label>{{event.type}}</label>
+          <button class="destroy" (click)="removeEvent(event)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer" *ngIf="events.length > 0">
+    <span class="event-count"><strong>{{events.length}}</strong> {{events.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+</section>
